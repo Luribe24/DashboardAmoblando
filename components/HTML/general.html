@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../normalize.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&amp;display=swap"
+        rel="stylesheet">
+
+    <script src="../LOGIC/general.js" type="module"></script>
+    <link rel="stylesheet" type="text/css" href="../STYLES/general.css">
+</head>
+
+<body class="bodyGeneral">
+
+    <!-- Contenedor de la tabla general  A -->
+    <section class="containerCardsKPI">
+
+        <!-- Contenedor de los filtros de esta ssección -->
+        <div class="filterArea">
+
+            <div class="containerTitleType">
+                <p class="testType"> Test A </p>
+            </div>
+
+            <!-- Filtrar por Tienda -->
+            <div class="filterShopper filterGeneral" title="Seleccione un País">
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    class="iconFilter" viewBox="0,0,256,256">
+                    <g fill="#0e2c59" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                            <path
+                                d="M4,6v5l-0.125,0.84375c-0.03516,0.20703 -0.875,5.10156 -0.875,7.65625c0,1.61719 0.37891,2.90625 1.0625,3.84375c-0.01953,-0.01172 -0.04297,-0.01953 -0.0625,-0.03125v24.6875h42v-24.6875c-0.01953,0.01172 -0.03906,0.01953 -0.0625,0.03125c0.68359,-0.9375 1.0625,-2.22656 1.0625,-3.84375c0,-2.55469 -0.83984,-7.44922 -0.875,-7.65625l-0.15625,-0.84375h0.03125v-5zM5.6875,13h4.3125v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-1.66016,0 -2.5,-1.17969 -2.5,-3.5c0,-1.78906 0.45703,-4.98828 0.6875,-6.5zM12,13h5v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM19,13h5v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM26,13h5v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM33,13h5v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM40,13h4.28125c0.23828,1.51172 0.71875,4.71094 0.71875,6.5c0,2.32031 -0.83984,3.5 -2.5,3.5c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM10,30h16v12h-16zM31,30h9v16h-9z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <select class="selectShopper selectGeneral">
+                    <option value="pullman">Pullman</option>
+                    <option value="amoblando">Amoblando</option>
+                </select>
+
+            </div>
+
+            <!-- filtro de Fecha inicio -->
+            <div class="filterCategory filterGeneral" title="seleccione la categoría">
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="50px" height="50px" viewBox="0,0,256,256" class="iconFilter">
+                    <g fill="#0e2c59" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                            <path
+                                d="M12,0c-1.09375,0 -2,0.90625 -2,2v2h-6c-1.16016,0 -2,0.83984 -2,2v7h46v-7c0,-1.16016 -0.83984,-2 -2,-2h-6v-2c0,-1.09375 -0.90625,-2 -2,-2h-2c-1.09375,0 -2,0.90625 -2,2v2h-18v-2c0,-1.09375 -0.90625,-2 -2,-2zM12,2h2v6h-2zM36,2h2v6h-2zM2,15v31c0,1.16016 0.83984,2 2,2h42c1.16016,0 2,-0.83984 2,-2v-31zM12,21h5v5h-5zM19,21h5v5h-5zM26,21h5v5h-5zM33,21h5v5h-5zM12,28h5v5h-5zM19,28h5v5h-5zM26,28h5v5h-5zM33,28h5v5h-5zM12,35h5v5h-5zM19,35h5v5h-5zM26,35h5v5h-5zM33,35h5v5h-5z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <input type="date" title="Fecha inicio" class="selectDateInit selectGeneral">
+                </input>
+            </div>
+
+            <!-- filtro de Fecha inicio -->
+            <div class="filterCategory filterGeneral">
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="50px" height="50px" viewBox="0,0,256,256" class="iconFilter">
+                    <g fill="#0e2c59" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                            <path
+                                d="M12,0c-1.09375,0 -2,0.90625 -2,2v2h-6c-1.16016,0 -2,0.83984 -2,2v7h46v-7c0,-1.16016 -0.83984,-2 -2,-2h-6v-2c0,-1.09375 -0.90625,-2 -2,-2h-2c-1.09375,0 -2,0.90625 -2,2v2h-18v-2c0,-1.09375 -0.90625,-2 -2,-2zM12,2h2v6h-2zM36,2h2v6h-2zM2,15v31c0,1.16016 0.83984,2 2,2h42c1.16016,0 2,-0.83984 2,-2v-31zM12,21h5v5h-5zM19,21h5v5h-5zM26,21h5v5h-5zM33,21h5v5h-5zM12,28h5v5h-5zM19,28h5v5h-5zM26,28h5v5h-5zM33,28h5v5h-5zM12,35h5v5h-5zM19,35h5v5h-5zM26,35h5v5h-5zM33,35h5v5h-5z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <input type="date" title="Fecha Fin" class="selectDateEnd selectGeneral">
+                </input>
+            </div>
+
+
+
+
+            <!-- filtro de SKU -->
+            <!-- <div class="filterSku filterGeneral" title="seleccione el Producto">
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    class="iconFilter" viewBox="0,0,256,256">
+                    <g fill="#0e2c59" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(3.55556,3.55556)">
+                            <path
+                                d="M16,31.75h40v21.25c0,3.86 -3.141,7 -7,7h-26c-3.859,0 -7,-3.14 -7,-7zM36,47c-0.552,0 -1,0.448 -1,1v3c0,0.552 0.448,1 1,1h10c0.552,0 1,-0.448 1,-1v-3c0,-0.552 -0.448,-1 -1,-1zM54,12c2.209,0 4,1.791 4,4v8c0,2.209 -1.791,4 -4,4h-36c-2.209,0 -4,-1.791 -4,-4v-8c0,-2.209 1.791,-4 4,-4z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <select class="selectSku selectGeneral">
+                    <option value="null">Seleccione Sku</option>
+                </select>
+            </div> -->
+
+        </div>
+
+        <!-- contenedor de metricas -->
+        <div class="contentCards">
+
+            <!-- Card de usabilidad -->
+            <div class="containerMetrics">
+                <h3 class="metricsTitle">Usabilidad</h3>
+                <div class="containerKPIS">
+                    <p class="withOutKPI usabilityWithOutA"> Sin interacción: <span class="valorKPI">40%</span></p>
+                    <p class="withKPI usabilityWithA"> Con interacción: <span class="valorKPI"> 15%</span></p>
+                </div>
+                <div class="containerGraphicKPI graphicUsabilityRenderA">
+                    <canvas id="chartUsabilityA" class="graphicTableKpi"></canvas>
+                </div>
+                <div class="diferenceContainerKPI" class="diferenceContainerKPI">
+                    <p class="diferenceUsabilityA diferenceKPI"></p>
+                </div>
+            </div>
+
+            <!-- card de engagement -->
+            <div class="containerMetrics">
+                <h3 class="metricsTitle">Tiempo permanencia</h3>
+                <div class="containerKPIS">
+                    <p class="withOutKPI engagementWithOutA"> Sin interacción: <span class="valorKPI">40%</span></p>
+                    <p class="withKPI engagementWithA"> Con interacción: <span class="valorKPI"> 15%</span></p>
+                </div>
+                <div class="containerGraphicKPI graphicEngagementRenderA">
+                    <canvas id="chartEngagementA" class="graphicTableKpi"></canvas>
+                </div>
+                <div class="diferenceContainerKPI">
+                    <p class="diferenceEngagementA diferenceKPI"></p>
+                </div>
+            </div>
+
+            <!-- card de add to car -->
+            <div class="containerMetrics">
+                <h3 class="metricsTitle">Añadir al carrito</h3>
+                <div class="containerKPIS">
+                    <p class="withOutKPI addToCarWithOutA"> Sin interacción: <span class="valorKPI">40%</span></p>
+                    <p class="withKPI addToCarWithA"> Con interacción: <span class="valorKPI"> 15%</span></p>
+                </div>
+                <div class="containerGraphicKPI graphicAddToCarRenderA">
+                    <canvas id="chartAddToCarA" class="graphicTableKpi"></canvas>
+                </div>
+                <div class="diferenceContainerKPI">
+                    <p class="diferenceAddToCarA diferenceKPI"></p>
+                </div>
+            </div>
+
+            <!-- card de purchase -->
+            <div class="containerMetrics">
+                <h3 class="metricsTitle">Conversión</h3>
+                <div class="containerKPIS">
+                    <p class="withOutKPI purchaseWithOutA"> Sin interacción: <span class="valorKPI">40%</span></p>
+                    <p class="withKPI purchaseWithA"> Con interacción: <span class="valorKPI"> 15%</span></p>
+                </div>
+                <div class="containerGraphicKPI graphicPurchaseRenderA">
+                    <canvas id="chartPurchaseA" class="graphicTableKpi"></canvas>
+                </div>
+                <div class="diferenceContainerKPI">
+                    <p class="diferencePurchaseA diferenceKPI"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contenedor de la tabla general B -->
+    <section class="containerCardsKPI">
+
+        <!-- Contenedor de los filtros de esta ssección -->
+        <div class="filterArea">
+
+            <div class="containerTitleType">
+                <p class="testType"> Test B </p>
+            </div>
+
+            <!-- Filtrar por Tienda -->
+            <!-- <div class="filterShopper filterGeneral" title="Seleccione un País">
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    class="iconFilter" viewBox="0,0,256,256">
+                    <g fill="#0e2c59" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                            <path
+                                d="M4,6v5l-0.125,0.84375c-0.03516,0.20703 -0.875,5.10156 -0.875,7.65625c0,1.61719 0.37891,2.90625 1.0625,3.84375c-0.01953,-0.01172 -0.04297,-0.01953 -0.0625,-0.03125v24.6875h42v-24.6875c-0.01953,0.01172 -0.03906,0.01953 -0.0625,0.03125c0.68359,-0.9375 1.0625,-2.22656 1.0625,-3.84375c0,-2.55469 -0.83984,-7.44922 -0.875,-7.65625l-0.15625,-0.84375h0.03125v-5zM5.6875,13h4.3125v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-1.66016,0 -2.5,-1.17969 -2.5,-3.5c0,-1.78906 0.45703,-4.98828 0.6875,-6.5zM12,13h5v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM19,13h5v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM26,13h5v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM33,13h5v8.90625c-0.65625,0.67969 -1.57812,1.09375 -2.5,1.09375c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM40,13h4.28125c0.23828,1.51172 0.71875,4.71094 0.71875,6.5c0,2.32031 -0.83984,3.5 -2.5,3.5c-0.92187,0 -1.84375,-0.41797 -2.5,-1.09375zM10,30h16v12h-16zM31,30h9v16h-9z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <select class="selectShopper selectGeneral">
+                    <option value="pullman">Pullman</option>
+                    <option value="amoblando">Amoblando</option>
+                </select>
+
+            </div> -->
+
+            <!-- filtro por Mes -->
+            <!-- <div class="filterDate filterGeneral" title="Seleccione periodo de tiempo">
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="50px" height="50px" viewBox="0,0,256,256" class="iconFilter">
+                    <g fill="#0e2c59" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                            <path
+                                d="M12,0c-1.09375,0 -2,0.90625 -2,2v2h-6c-1.16016,0 -2,0.83984 -2,2v7h46v-7c0,-1.16016 -0.83984,-2 -2,-2h-6v-2c0,-1.09375 -0.90625,-2 -2,-2h-2c-1.09375,0 -2,0.90625 -2,2v2h-18v-2c0,-1.09375 -0.90625,-2 -2,-2zM12,2h2v6h-2zM36,2h2v6h-2zM2,15v31c0,1.16016 0.83984,2 2,2h42c1.16016,0 2,-0.83984 2,-2v-31zM12,21h5v5h-5zM19,21h5v5h-5zM26,21h5v5h-5zM33,21h5v5h-5zM12,28h5v5h-5zM19,28h5v5h-5zM26,28h5v5h-5zM33,28h5v5h-5zM12,35h5v5h-5zM19,35h5v5h-5zM26,35h5v5h-5zM33,35h5v5h-5z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <select class="selectDate selectGeneral">
+                    <option value="null">Seleccione</option>
+                </select>
+            </div> -->
+
+            <!-- filtro de Categoria -->
+            <!-- <div class="filterCategory filterGeneral" title="seleccione la categoría">
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    class="iconFilter" viewBox="0,0,256,256">
+                    <g fill="#0e2c59" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(3.55556,3.55556)">
+                            <path
+                                d="M19,13c-4.963,0 -9,4.038 -9,9v27c0,0.217 0.0172,0.43153 0.0332,0.64453l5.46289,-14.0625c1.79,-4.606 6.14003,-7.58203 11.08203,-7.58203h33.41016c0.685,0 1.35472,0.0867 2.01172,0.2207v-2.2207c0,-4.962 -4.037,-9 -9,-9h-20.24609c-0.227,0 -0.44609,-0.0768 -0.62109,-0.2168l-2.26367,-1.80859c-1.589,-1.273 -3.58605,-1.97461 -5.62305,-1.97461zM26.57813,32c-3.279,0 -6.16552,1.97525 -7.35352,5.03125l-6.96094,17.91602c1.651,1.867 4.05433,3.05273 6.73633,3.05273h34.1875c3.323,0 6.25003,-2.00156 7.45703,-5.10156l4.94727,-12.72461c0.717,-1.847 0.47837,-3.9265 -0.64062,-5.5625c-0.181,-0.265 -2.06489,-2.61133 -4.96289,-2.61133z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <select class="selectCategory selectGeneral">
+                    <option value="null">Seleccione Categoría</option>
+                    <option value="Aires">Aires</option>
+                    <option value="Calentadores">Calentadores</option>
+                    <option value="Campanas">Campanas</option>
+                    <option value="Lavado">Lavado</option>
+                    <option value="Refrigeración">Refrigeración</option>
+                    <option value="Empotre">Empotre</option>
+                    <option value="Estufas">Estufas</option>
+                    <option value="Globales">Globales</option>
+                </select>
+            </div> -->
+
+            <!-- filtro de SKU -->
+            <!-- <div class="filterSku filterGeneral" title="seleccione el Producto">
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    class="iconFilter" viewBox="0,0,256,256">
+                    <g fill="#0e2c59" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(3.55556,3.55556)">
+                            <path
+                                d="M16,31.75h40v21.25c0,3.86 -3.141,7 -7,7h-26c-3.859,0 -7,-3.14 -7,-7zM36,47c-0.552,0 -1,0.448 -1,1v3c0,0.552 0.448,1 1,1h10c0.552,0 1,-0.448 1,-1v-3c0,-0.552 -0.448,-1 -1,-1zM54,12c2.209,0 4,1.791 4,4v8c0,2.209 -1.791,4 -4,4h-36c-2.209,0 -4,-1.791 -4,-4v-8c0,-2.209 1.791,-4 4,-4z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <select class="selectSku selectGeneral">
+                    <option value="null">Seleccione Sku</option>
+                </select>
+            </div> -->
+
+        </div>
+
+        <!-- contenedor de metricas -->
+        <div class="contentCards">
+
+            <!-- Card de usabilidad -->
+            <div class="containerMetrics">
+                <h3 class="metricsTitle">Sesiones</h3>
+                <div class="containerKPIS">
+                    <p class="withOutKPI usabilityWithOutB"> Sin interacción: <span class="valorKPI">40%</span></p>
+                </div>
+                <div class="containerGraphicKPI graphicUsabilityRenderB">
+                    <canvas id="chartUsabilityB" class="graphicTableKpi"></canvas>
+                </div>
+                <div class="diferenceContainerKPI" class="diferenceContainerKPI">
+                    <p class="diferenceUsabilityB diferenceKPI"></p>
+                </div>
+            </div>
+
+            <!-- card de engagement -->
+            <div class="containerMetrics">
+                <h3 class="metricsTitle">Tiempo permanencia</h3>
+                <div class="containerKPIS">
+                    <p class="withOutKPI engagementWithOutB"> Sin interacción: <span class="valorKPI">40%</span></p>
+                </div>
+                <div class="containerGraphicKPI graphicEngagementRenderB">
+                    <canvas id="chartEngagementB" class="graphicTableKpi"></canvas>
+                </div>
+                <div class="diferenceContainerKPI" style="display: none;">
+                    <p class="diferenceEngagementB diferenceKPI"></p>
+                </div>
+            </div>
+
+            <!-- card de add to car -->
+            <div class="containerMetrics">
+                <h3 class="metricsTitle">Añadir al carrito</h3>
+                <div class="containerKPIS">
+                    <p class="withOutKPI addToCarWithOutB"> Sin interacción: <span class="valorKPI">40%</span></p>
+                </div>
+                <div class="containerGraphicKPI graphicAddToCarRenderB">
+                    <canvas id="chartAddToCarB" class="graphicTableKpi"></canvas>
+                </div>
+                <div class="diferenceContainerKPI">
+                    <p class="diferenceAddToCarB diferenceKPI"></p>
+                </div>
+            </div>
+
+            <!-- card de purchase -->
+            <div class="containerMetrics">
+                <h3 class="metricsTitle">Conversión</h3>
+                <div class="containerKPIS">
+                    <p class="withOutKPI purchaseWithOutB"> Sin interacción: <span class="valorKPI">40%</span></p>
+                </div>
+                <div class="containerGraphicKPI graphicPurchaseRenderB">
+                    <canvas id="chartPurchaseB" class="graphicTableKpi"></canvas>
+                </div>
+                <div class="diferenceContainerKPI">
+                    <p class="diferencePurchaseB diferenceKPI"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+
+</html>
