@@ -18,6 +18,8 @@ async function requestUsability(myTest, myEventView, myInteraction, myDevice) {
         viewEvent: myEventView,
         interaction: myInteraction,
         deviceType: myDevice,
+        dateInit  : document.body.querySelector('.selectDateInit').value,
+        dateEnd   : document.body.querySelector('.selectDateEnd').value,
     }
 
     const request = await fetch(`${urlConsult}usabilityRequestPixel`, {
@@ -415,6 +417,15 @@ await buildTable('A');
 await buildTable('B');
 
 document.body.querySelector('.selectShopper').addEventListener('input', async () => {
+    await buildTable('A');
+    await buildTable('B');
+})
+
+document.body.querySelector('.selectDateInit').addEventListener('input', async () => {
+    await buildTable('A');
+    await buildTable('B');
+})
+document.body.querySelector('.selectDateEnd').addEventListener('input', async () => {
     await buildTable('A');
     await buildTable('B');
 })
