@@ -20,6 +20,28 @@ let
     urlConsult = `http://localhost:3589/api/mudiv1/`
 
 
+    async function requestUsers(myTest,) {
+
+        let MyBody = {
+            shopper: document.body.querySelector('.selectShopper').value,
+            test: myTest,
+            dateInit: document.body.querySelector('.selectDateInit').value,
+            dateEnd: document.body.querySelector('.selectDateEnd').value,
+        }
+    
+        const request = await fetch(`${urlConsult}usersRequestPixel`, {
+            method: 'POST',
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(MyBody)
+        })
+    
+        const response = await request.json();
+        const data = await response[0].totalUsers;
+        return data
+   
+    };
+
+
 async function requestUsability(myTest, myEventView, myInteraction, myDevice) {
 
     let MyBody = {
@@ -118,6 +140,10 @@ async function allResultsRequest(test) {
 
     let results = {
 
+        users:{
+            totaUser: null,
+        },
+
         usability: {
             withDesk: null,
             withMobile: null,
@@ -145,8 +171,10 @@ async function allResultsRequest(test) {
 
 
     };
-
+ 
     test == 'A' && (
+        results.users.totaUser              = await requestUsers(test),
+
         results.usability.withDesk          = await requestUsability(test, '>', '>', 'desk'),
         results.usability.withMobile        = await requestUsability(test, '>', '>', 'mobile'),
         results.usability.withOutDesk       = await requestUsability(test, '>', '=', 'desk'),
@@ -169,24 +197,25 @@ async function allResultsRequest(test) {
 
 
     )
-    console.log(results.purchase);
 
     test == 'B' && (
-        results.usability.withOutDesk = await requestUsability(test, '=', '=', 'desk'),
-        results.usability.withOutMobile = await requestUsability(test, '=', '=', 'mobile'),
 
-        results.engagement.withOutDesk = await requestEngagement(test, '=', '=', 'desk'),
-        results.engagement.withOutMobile = await requestEngagement(test, '=', '=', 'mobile'),
+        results.users.totaUser              = await requestUsers(test),
+        results.usability.withOutDesk       = await requestUsability(test, '=', '=', 'desk'),
+        results.usability.withOutMobile     = await requestUsability(test, '=', '=', 'mobile'),
 
-        results.addToCar.withOutDesk = await requestAddToCar(test, '=', '=', '>', 'desk'),
-        results.addToCar.withOutMobile = await requestAddToCar(test, '=', '=', '>', 'mobile'),
+        results.engagement.withOutDesk      = await requestEngagement(test, '=', '=', 'desk'),
+        results.engagement.withOutMobile    = await requestEngagement(test, '=', '=', 'mobile'),
 
-        results.purchase.withOutDesk = await requestPurchase(test, '>', 'desk','='),
-        results.purchase.withOutMobile = await requestPurchase(test, '>', 'mobile','=')
+        results.addToCar.withOutDesk        = await requestAddToCar(test, '=', '=', '>', 'desk'),
+        results.addToCar.withOutMobile      = await requestAddToCar(test, '=', '=', '>', 'mobile'),
+
+        results.purchase.withOutDesk        = await requestPurchase(test, '>', 'desk','='),
+        results.purchase.withOutMobile      = await requestPurchase(test, '>', 'mobile','=')
     )
     return results;
 
-
+   
 };
 
 /** Suma de Engagement */
@@ -230,16 +259,16 @@ function plusTime(object) {
 /** Función para construir la tabla de datos generales */
 async function buildTable(test) {
 
-    const results = await allResultsRequest(test);
+    const results   = await allResultsRequest(test);
     const totalTime = plusTime(results.engagement);
 
-
-
+    test == 'A' && (document.body.querySelector(`.Users${test}`).innerHTML = `Usuarios: <span class="">${results.users.totaUser}</span>`);
+    test == 'B' && (document.body.querySelector(`.Users${test}`).innerHTML = `Usuarios: <span class="">${results.users.totaUser}</span>`);
     /** Imprimiendo la usabilidad Con y Sin interacción */
     const withI = (results.usability.withDesk + results.usability.withMobile);
     const withOutI = (results.usability.withOutDesk + results.usability.withOutMobile);
     const diferencia = (withI / withOutI * 100).toFixed(0);
-
+   
     test == 'A' && (document.body.querySelector(`.usabilityWith${test}`).innerHTML = `Con interacción: <span class="valorKPI">${withI}</span>`);
     document.body.querySelector(`.usabilityWithOut${test}`).innerHTML = `Sin interacción: <span class="valorKPI">${withOutI}</span>`;
     test == 'A' && (document.body.querySelector(`.diferenceUsability${test}`).innerHTML = `% Diferencia : ${diferencia}%`);
@@ -259,7 +288,6 @@ async function buildTable(test) {
     test == 'A' && (document.body.querySelector(`.diferenceAddToCar${test}`).innerHTML = `% Diferencia : ${diferenciaAddToCart}%`);
 
     /** Imprimiendo la conversión Con y Sin  interacción */
-    console.log(results.purchase);
     const withIPurchase = (results.purchase.withDesk + results.purchase.withMobile);
     const withOutIPurchase = (results.purchase.withOutDesk + results.purchase.withOutMobile);
     const diferenciaPurchase = (withIPurchase / withOutIPurchase * 100).toFixed(0);
